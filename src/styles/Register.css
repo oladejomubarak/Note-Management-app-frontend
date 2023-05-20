@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+}
+
+.register-bg-image{
+  justify-content: space-between;
+
+}
+.register-image{
+width: 800px;
+height: 730px;
+
+}
+.register-page{
+  display: flex;
+  flex-direction: row;
+  
+}
+.welcome-div h1{
+size: 1000px;
+margin-left: 170px;
+margin-top: 10px;
+color: rgb(164, 109, 42);
+
+}
+.welcome-div h2{
+margin-top: 50px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color:  rgb(164, 109, 42);
+margin-left: 190px;
+}
+.register-form-div{
+  margin-top: 50px;
+  margin-left: 120px;
+  width: 85%;
+}
+.register-form-div label{
+  text-align: left;
+  display: block;
+}
+.register-form-div input{
+    width:100%;
+    padding: 8px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+}
+.register-form-div button {
+    background:rgb(164, 109, 42);
+    color: black;
+    border: 0;
+    padding: 8px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 160px;
+  
+}
+.register-form-div p {
+margin-top: 30px;
+margin-left: 50px;
+}
+.register-form-div Link:hover {
+  color: green;
+  }
+/* .welcome-div{
+  background-color: bisque;
+  width:750px;
+  height: 100px;
+  position: fixed;
+  
+} */

@@ -3,6 +3,9 @@ import LoginSideImage from '../src/assets/notePictures/images6.png';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+const registerApi = "http://localhost:8082/api/v1/register";
+
+
   return ( 
     <div className="register-page">
     <div className="register-bg-image">

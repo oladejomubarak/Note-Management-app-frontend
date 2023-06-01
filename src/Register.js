@@ -92,6 +92,7 @@ const Register = () => {
             <p>
               Already have an account? <Link to="/">Log in instead</Link>
             </p>
+            <p>OR request for token <Link to="/verify-token"></Link></p>
           </form>
         </div>
       </div>

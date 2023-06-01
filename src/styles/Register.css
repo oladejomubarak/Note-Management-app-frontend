@@ -24,7 +24,7 @@ color: rgb(164, 109, 42);
 
 }
 .welcome-div h2{
-margin-top: 50px;
+margin-top: 30px;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 color:  rgb(164, 109, 42);
 margin-left: 190px;
@@ -58,7 +58,7 @@ margin-left: 190px;
   
 }
 .register-form-div p {
-margin-top: 30px;
+margin-top: 20px;
 margin-left: 50px;
 }
 .register-form-div Link:hover {

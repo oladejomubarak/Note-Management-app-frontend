@@ -1,4 +1,5 @@
-import '../src/styles/Login.css';
+// import '../src/styles/Login.css';
+import'../src/styles/VerifyToken.css';
 import LoginSideImage from '../src/assets/notePictures/images.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -36,17 +37,19 @@ const handleVerifyClick = () =>{
           </div>
         <div className='login-form-div'>
           <form >
-            <p>Enter the 4 digits token recieved in the space below</p>
+            <p>Enter the 4 digits token recieved and your email in the space below</p>
             <label>Token:</label>
-            <input
-            type="text"
+            <input className='token'
+            type="number"
+            pattern='\d*'
             name='token'
             onChange={handleChange}
             // size={4}
              required
+             maxLength="4"
             />
             <label>Email:</label>
-            <input
+            <input className='email'
             type="text"
             name='email'
             onChange={handleChange}

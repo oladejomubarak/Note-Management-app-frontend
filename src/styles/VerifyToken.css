@@ -1,3 +1,12 @@
+.token{
+  width: 70px;;
+  padding: 8px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
 * {
   margin: 0;
 }
@@ -38,7 +47,7 @@ margin-left: 190px;
   text-align: left;
   display: block;
 }
-.login-form-div input{
+.email{
     width:100%;
     padding: 8px 10px;
     margin: 10px 0;

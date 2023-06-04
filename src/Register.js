@@ -13,7 +13,7 @@ const Register = () => {
     lastname: "",
     emailAddress: "",
     password: "",
-    password: "",
+    password: ""
   };
 
   const [registerData, setRegisterData] = useState(data);

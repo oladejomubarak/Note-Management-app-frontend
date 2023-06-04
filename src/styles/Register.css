@@ -8,18 +8,18 @@
 }
 .register-image{
 width: 800px;
-height: 730px;
+height: 680px;
 
 }
 .register-page{
   display: flex;
   flex-direction: row;
-  
 }
 .welcome-div h1{
 size: 1000px;
 margin-left: 170px;
 margin-top: 10px;
+margin-bottom: 5px;
 color: rgb(164, 109, 42);
 
 }
@@ -30,7 +30,7 @@ color:  rgb(164, 109, 42);
 margin-left: 190px;
 }
 .register-form-div{
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 120px;
   width: 85%;
 }
@@ -64,10 +64,3 @@ margin-left: 50px;
 .register-form-div Link:hover {
   color: green;
   }
-/* .welcome-div{
-  background-color: bisque;
-  width:750px;
-  height: 100px;
-  position: fixed;
-  
-} */

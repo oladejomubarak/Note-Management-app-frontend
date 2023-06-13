@@ -20,7 +20,7 @@ const Register = () => {
 
   const handleChange = (e) => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value });
-  };
+  }; 
 
   const handleSubmit = (e) => {
     e.preventDefault();

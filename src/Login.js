@@ -30,7 +30,9 @@ const Login = () => {
             <p>Don't have an account? <Link to="/register">Register instead
             </Link>
             </p>
-      
+            <p>Have an account, but not verified? <Link to="/resend-token">Request for verification token
+            </Link>
+            </p>      
           </form>
         </div>
         </div>

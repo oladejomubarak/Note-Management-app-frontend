@@ -5,6 +5,7 @@ import Login from './Login';
 import Register from './Register';
 import VerifyToken from './VerifyToken';
 import Home from './Home';
+import ResendToken from './ResendToken';
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
         <Route path = {"/verify-token"} element ={<VerifyToken/>} />
       
         <Route path= {"/home"} element = {<Home/>}/>
+
+        <Route path= {"/resend-token"} element = {<ResendToken/>}/>
 
         </Routes>
     </>    

@@ -1,6 +1,6 @@
 // import '../src/styles/Login.css';
 import'../src/styles/VerifyToken.css';
-import LoginSideImage from '../src/assets/notePictures/images.png';
+import LoginSideImage from '../src/assets/notePictures/images6.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
@@ -34,7 +34,7 @@ const VerifyToken = () => {
   return (
     <div className="login-page">
 
-<div className="login-bg-image">
+    <div className="login-bg-image">
         <img className='login-image' src={LoginSideImage} alt='login-image'/>
 
       </div>

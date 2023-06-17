@@ -30,7 +30,9 @@ const VerifyToken = () => {
         console.log(err);
     });
   };
-
+const handleResendToken = () => {
+  navigate("/resend-token");
+}
   return (
     <div className="login-page">
 
@@ -64,8 +66,8 @@ const VerifyToken = () => {
             required 
             />
             <button type='submit'>verify</button>
-            <button>resend token </button>
           </form>
+          <button onClick={handleResendToken}>resend token </button>
         </div>
         </div>
 

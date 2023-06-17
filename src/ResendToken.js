@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+import Axios from "axios";
 import LoginSideImage from "../src/assets/notePictures/images6.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -19,15 +19,14 @@ const ResendToken = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(resendTokenData);
-
     Axios.post(resendTokenApi, resendTokenData)
     .then((result) => {
       console.log(result);
       result.status === 200 && navigate("/verify-token");
     }).catch((err) => {
-      console.log(err);
+      alert(err.toJSON().message);
     });
-  }
+  };
   return ( 
   <div className="login-page">
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../src/styles/Register.css";
 import LoginSideImage from "../src/assets/notePictures/images6.png";
 import { Link, useNavigate } from "react-router-dom";
-import Axios from "axios";
+import axios from "axios";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -18,6 +18,8 @@ const Register = () => {
 
   const [registerData, setRegisterData] = useState(data);
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value });
   }; 
@@ -27,13 +29,21 @@ const Register = () => {
     console.log("clicking is working");
     console.log(registerData);
 
-    Axios.post(registerApi, registerData)
+    axios.post(registerApi, registerData)
       .then((res) => {
         console.log(res);
         res.status === 200 && navigate("/verify-token");
+        //alert("Registration successful, check your email for verification code");
       })
       .catch((err) => {
         console.log(err);
+        if(err.response && err.response.data){
+        setErrorMessage(err.response.data.message);
+       errorMessage &&  alert(errorMessage);
+        } else{
+          setErrorMessage("Unexpted error occured while making request")
+          errorMessage &&  alert(errorMessage);  
+        }
       });
   };
   return (

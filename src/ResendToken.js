@@ -1,7 +1,10 @@
-import Axios from "axios";
+import axios from "axios";
 import LoginSideImage from "../src/assets/notePictures/images6.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ResendToken = () => {
   const resendTokenApi = "http://localhost:8082/api/v1/resend-token";
@@ -11,6 +14,7 @@ const ResendToken = () => {
   } 
 
   const [resendTokenData, setResendTokenData] = useState(data);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setResendTokenData({...resendTokenData, [e.target.name]: e.target.value});
@@ -19,19 +23,24 @@ const ResendToken = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(resendTokenData);
-    Axios.post(resendTokenApi, resendTokenData)
+    axios.post(resendTokenApi, resendTokenData)
     .then((result) => {
       console.log(result);
       result.status === 200 && navigate("/verify-token");
     }).catch((err) => {
-      alert(err.toJSON().message);
+      if(err.response && err.response.data.message){
+        setErrorMessage(err.response.data.message);
+        } else{
+          setErrorMessage("Something went wrong!")  
+        }
+        errorMessage &&  toast.error(errorMessage);
     });
   };
   return ( 
   <div className="login-page">
 
     <div className="login-bg-image">
-        <img className='login-image' src={LoginSideImage} alt='login-image'/>
+        <img className='login-image' src={LoginSideImage} alt='note'/>
 
       </div>
       <div className="login-welcome-div">

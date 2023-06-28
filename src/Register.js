@@ -3,6 +3,8 @@ import "../src/styles/Register.css";
 import LoginSideImage from "../src/assets/notePictures/images6.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const Register = () => {
     lastname: "",
     emailAddress: "",
     password: "",
-    password: ""
+    //password: ""
   };
 
   const [registerData, setRegisterData] = useState(data);
@@ -37,13 +39,14 @@ const Register = () => {
       })
       .catch((err) => {
         console.log(err);
-        if(err.response && err.response.data){
+        if(err.response && err.response.data.message){
         setErrorMessage(err.response.data.message);
-       errorMessage &&  alert(errorMessage);
+
         } else{
-          setErrorMessage("Unexpted error occured while making request")
-          errorMessage &&  alert(errorMessage);  
+          setErrorMessage("Something went wrong!")
+          
         }
+        errorMessage &&  toast.error(errorMessage);
       });
   };
   return (
@@ -52,7 +55,7 @@ const Register = () => {
         <img
           className="register-image"
           src={LoginSideImage}
-          alt="register-image"
+          alt="note"
         />
       </div>
       <div className="register-welcome-div">
@@ -98,7 +101,6 @@ const Register = () => {
               required
             />
             <button type="submit">Sign up</button>
-
             <p>
               Already have an account? <Link to="/">Log in instead</Link>
             </p>
@@ -108,6 +110,7 @@ const Register = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Register;

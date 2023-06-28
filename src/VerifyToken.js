@@ -1,9 +1,12 @@
-// import '../src/styles/Login.css';
+
 import'../src/styles/VerifyToken.css';
 import LoginSideImage from '../src/assets/notePictures/images6.png';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const VerifyToken = () => {
   const navigate = useNavigate();
 
@@ -15,6 +18,7 @@ const VerifyToken = () => {
   }
 
   const [confirmTokenData, setConfirmTokenData] = useState(data);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) =>{
     setConfirmTokenData({...confirmTokenData, [e.target.name]: e.target.value });
@@ -22,22 +26,29 @@ const VerifyToken = () => {
   const handleSubmit = (e)=>{
     e.preventDefault();
     console.log(confirmTokenData);
-    Axios.patch(confirmTokenApi, confirmTokenData)
+    axios.patch(confirmTokenApi, confirmTokenData)
     .then((res)=>{
       console.log(res);
       res.status === 200 && navigate('/home');
     }).catch((err)=>{
-        console.log(err);
-    });
+      console.log(err);
+      if(err.response && err.response.data.message){
+      setErrorMessage(err.response.data.message);
+      } else{
+        setErrorMessage("Something went wrong!")  
+      }
+      errorMessage &&  toast.error(errorMessage);
+      });
   };
-const handleResendToken = () => {
+const handleResendToken = (e) => {
+  e.preventDefault();
   navigate("/resend-token");
 }
   return (
     <div className="login-page">
 
     <div className="login-bg-image">
-        <img className='login-image' src={LoginSideImage} alt='login-image'/>
+        <img className='login-image' src={LoginSideImage} alt='note'/>
 
       </div>
       <div className="login-welcome-div">
@@ -67,7 +78,7 @@ const handleResendToken = () => {
             />
             <button type='submit'>verify</button>
           </form>
-          <button onClick={handleResendToken}>resend token </button>
+          <button className='resend-token' onClick={handleResendToken}>resend token </button>
         </div>
         </div>
 

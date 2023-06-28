@@ -1,14 +1,10 @@
-.token{
-  width: 70px;;
-  padding: 8px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
 
 * {
   margin: 0;
+}
+.resend-token{
+margin-left: 20px;
+background-color: green;
 }
 
 .login-bg-image{
@@ -73,3 +69,12 @@ margin-left: 50px;
 .login-form-div Link:hover {
   color: green;
   }
+  .token{
+    width: 20px;
+    padding: 8px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+  }
+  

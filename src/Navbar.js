@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const Navbar = () =>{
   const [selectedDate, setSelectedDate] = useState(null);
+  const today = new Date();
 
 
 
@@ -37,7 +38,7 @@ const Navbar = () =>{
             <input 
             type='text'
             name='keyword'
-            placeholder='keyword'
+            placeholder='Search note by keyword'
             onChange={handleSearchOneChange}
             />
             <button type="submit">Submit</button>
@@ -48,7 +49,7 @@ const Navbar = () =>{
             <input 
             type='text'
             name='keyword'
-            placeholder='title'
+            placeholder='Search note by title'
             onChange={handleSearchTwoChange}
             />
             <button type="submit">Submit</button>
@@ -61,7 +62,8 @@ const Navbar = () =>{
             selected={selectedDate}
             onChange={handleSearchThreeChange}
             dateFormat="dd/MM/yyyy"
-            placeholderText="Select a date"
+            placeholderText="Search note by date"
+            maxDate={today}
           />
           </div>
           <button type="submit">Submit</button>

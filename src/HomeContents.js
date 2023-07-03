@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/HomeContent.css';
+import {Link} from 'react-router-dom';
 
 
 const HomeContent = () => {
@@ -45,7 +46,7 @@ const HomeContent = () => {
     )) : (
       <p>Loading...</p>
     )}
-    {!isPending && noData && <h5 className="empty-list-message">The list is empty</h5>}
+    {!isPending && noData && <h5 className="empty-list-message">The list is empty, <Link to="/add-note">Click to add note</Link></h5>}
 
   </div>
   </>);

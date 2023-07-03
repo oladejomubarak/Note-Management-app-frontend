@@ -67,7 +67,7 @@ const Navbar = () =>{
         </div>
       </div>
     <div className="links">
-      <Link to='/create'>Add note</Link>
+      <Link to='/add-note'>Add note</Link>
       <Link to='/'>Logout</Link>
     </div>
     </nav>

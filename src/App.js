@@ -9,6 +9,7 @@ import ResendToken from './ResendToken';
 import {Slide,ToastContainer, toast} from 'react-toastify';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
+import AddNote from './AddNote';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path= {"/resend-token"} element = {<ResendToken/>} />
         <Route path= {"/forgot-password"} element = {<ForgotPassword/>} />
         <Route path= {"/reset-password"} element = {<ResetPassword/>} />
+        <Route path= {"/add-note"} element = {<AddNote/>} />
 
         </Routes>
         <ToastContainer transition={Slide}hideProgressBar={true} position={toast.POSITION.TOP_CENTER} theme='colored'/>

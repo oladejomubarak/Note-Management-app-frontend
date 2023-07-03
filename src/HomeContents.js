@@ -28,7 +28,10 @@ const HomeContent = () => {
       <div className="entry-preview" key={entry.id}>
         <h2>{entry.title}</h2>
         <p>{entry.body}</p>
-        <h3>{entry.dateCreated}</h3>
+        <div>
+          <h3>{entry.dateCreated}</h3>
+        <h4>{entry.timeCreated}</h4>
+        </div>
       </div>
     )
     )) : (

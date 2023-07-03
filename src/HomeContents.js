@@ -7,12 +7,16 @@ import './styles/HomeContent.css';
 
 const HomeContent = () => {
   const [entries, setEntries] = useState(null);
+  const [noData, setNoData] = useState({});
   useEffect(()=>{
     setTimeout(()=>{
       axios.get("http://localhost:8082/api/v1/entries")
     .then(res => {
       if(res.status === 200){
         setEntries(res.data)
+      }
+      if(res.data.length === 0){
+        setNoData(null)
       }
     }).catch(err =>{
   toast.error("Can't fetch data");
@@ -37,6 +41,7 @@ const HomeContent = () => {
     )) : (
       <p>Loading...</p>
     )}
+    {noData && <h5>There is nothing in the list</h5>}
 
   </div>
   </>);

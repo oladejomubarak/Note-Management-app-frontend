@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+*{
+  margin: 0;
+  font-family: Roboto;
+}
+.entries{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.entry-preview{
+  border-color: bisque;
+  border-style: solid;
+  border-radius: 5%;
+
+}

@@ -7,10 +7,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 const Navbar = () =>{
   const [selectedDate, setSelectedDate] = useState(null);
   const today = new Date();
-
-
-
-
   const handleSearchOneSubmit = () =>{
 
   }
@@ -26,7 +22,8 @@ const Navbar = () =>{
   const handleSearchThreeSubmit = () =>{
 
   }
-  const handleSearchThreeChange = () =>{
+  const handleSearchThreeChange = (date) =>{
+    setSelectedDate(date);
 
   }
   return(
@@ -41,7 +38,7 @@ const Navbar = () =>{
             placeholder='Search note by keyword'
             onChange={handleSearchOneChange}
             />
-            <button type="submit">Submit</button>
+            <button type="submit">Search</button>
           </form>
         </div>
         <div className='search2'>
@@ -52,31 +49,29 @@ const Navbar = () =>{
             placeholder='Search note by title'
             onChange={handleSearchTwoChange}
             />
-            <button type="submit">Submit</button>
+            <button type="submit">Search</button>
           </form>
         </div>
         <div className='search3'>
         <form onSubmit={handleSearchThreeSubmit}>
-        <div>
             <DatePicker
             selected={selectedDate}
             onChange={handleSearchThreeChange}
-            dateFormat="dd/MM/yyyy"
+            dateFormat="dd-MM-yyyy"
             placeholderText="Search note by date"
             maxDate={today}
           />
-          </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Search</button>
           </form>
           
         </div>
       </div>
     <div className="links">
-      <Link to='/home'>Home</Link>
       <Link to='/create'>Add note</Link>
+      <Link to='/'>Logout</Link>
     </div>
     </nav>
-
+    
   );
 }
 export default Navbar;

@@ -5,24 +5,49 @@
   font-family: Roboto;
 }
 .navbar{
-  padding: 20px;
+  padding: 25px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  /* max-width: 1150px; */
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 3px solid rgb(164, 109, 42);
+  border-left: 3px solid rgb(164, 109, 42);
+  border-right: 3px solid rgb(164, 109, 42);
+  background-color: antiquewhite;
+  height: 70px;
   }
   .navbar h1{
-    color: #f1356d;
+    color: rgb(164, 109, 42);
+    margin-right: 50px;
   }
   .navbar .links {
     margin-left: auto;
   }
   .navbar a {
-    margin-left: 16px;
+    margin-left: 10px;
     text-decoration: none;
-    padding: 6px;
+    padding: 7px;
   }
   .navbar a:hover{
     color: #f1356d;
+  }
+  .search{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+    flex: 1;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  .navbar button{
+    height: 35px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    
+  }
+  .navbar input{
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }

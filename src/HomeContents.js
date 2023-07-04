@@ -42,9 +42,9 @@ const HomeContent = () => {
         <h4>at {entry.timeCreated}</h4>
         </div>
         <div className="entry-operations">
-          <p>view</p>
-          <p>edit</p>
-          <p>delete</p>
+          <p className="view">view</p>
+          <p className="edit">edit</p>
+          <p className="delete">delete</p>
         </div>
 
       </div>

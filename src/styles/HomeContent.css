@@ -22,8 +22,21 @@
   margin: 200px 85px;
 }
 .entry-preview h2{
-  color: rgb(203, 78, 78);
+  color: rgb(246, 61, 218);
   border-color: black;
   border-bottom:1px solid black;
   text-align: center;
+}
+.entry-operations{
+display: flex;
+justify-content: space-between;
+}
+.view{
+  color: blue;
+}
+.edit{
+  color: rgb(92, 189, 92);
+}
+.delete{
+  color: red;
 }

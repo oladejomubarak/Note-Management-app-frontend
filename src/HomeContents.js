@@ -10,6 +10,7 @@ const HomeContent = () => {
   const [entries, setEntries] = useState(null);
   const [noData, setNoData] = useState(true);
   const [isPending, setPending] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
   useEffect(()=>{
     setTimeout(()=>{
       axios.get("http://localhost:8082/api/v1/entries")
@@ -21,16 +22,20 @@ const HomeContent = () => {
       }
       if(res.status === 200 && res.data.length === 0){
         setNoData(true);
-        setPending(false)
+        setPending(false);
+        
       }
     }).catch(err =>{
-  toast.error("Can't fetch data");
+      setErrorMessage("Can't fetch data");
+      setPending(false);
+      setNoData(false);
+      
     })
-
-    }, 1000)
     
+    }, 1000)
+   
   }, []);
-
+  errorMessage && toast.error(errorMessage);
   return (  <>
   <div className="entries">
     {entries ? (entries.map((entry) => (
@@ -50,7 +55,8 @@ const HomeContent = () => {
       </div>
     )
     )) : (
-      <p>Loading...</p>
+
+      !errorMessage && <p>Loading...</p>
     )}
     {!isPending && noData && <h5 className="empty-list-message">The list is empty, <Link to="/add-note">Click to add note</Link></h5>}
 

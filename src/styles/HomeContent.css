@@ -13,8 +13,17 @@
   border-color: bisque;
   border-style: solid;
   border-radius: 5%;
+  max-width: 300px;
+  max-height: 200px;
+  background-color: bisque;
 
 }
 .empty-list-message{
   margin: 200px 85px;
+}
+.entry-preview h2{
+  color: rgb(203, 78, 78);
+  border-color: black;
+  border-bottom:1px solid black;
+  text-align: center;
 }

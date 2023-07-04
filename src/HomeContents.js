@@ -36,11 +36,17 @@ const HomeContent = () => {
     {entries ? (entries.map((entry) => (
       <div className="entry-preview" key={entry.id}>
         <h2>{entry.title}</h2>
-        <p>{entry.body}</p>
-        <div>
-          <h3>{entry.dateCreated}</h3>
-        <h4>{entry.timeCreated}</h4>
+        {/* <p>{entry.body}</p> */}
+        <div className="date-time">
+          <h3>created on {entry.dateCreated}</h3>
+        <h4>at {entry.timeCreated}</h4>
         </div>
+        <div className="entry-operations">
+          <p>view</p>
+          <p>edit</p>
+          <p>delete</p>
+        </div>
+
       </div>
     )
     )) : (

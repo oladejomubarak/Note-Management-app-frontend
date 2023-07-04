@@ -4,6 +4,7 @@ import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/HomeContent.css';
 import {Link} from 'react-router-dom';
+import ViewEntry from "./ViewEntry";
 
 
 const HomeContent = () => {
@@ -11,6 +12,10 @@ const HomeContent = () => {
   const [noData, setNoData] = useState(true);
   const [isPending, setPending] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleView = ()=>{
+    return(<Link to=''></Link>);
+  }
   useEffect(()=>{
     setTimeout(()=>{
       axios.get("http://localhost:8082/api/v1/entries")
@@ -47,7 +52,7 @@ const HomeContent = () => {
         <h4>at {entry.timeCreated}</h4>
         </div>
         <div className="entry-operations">
-          <p className="view" onClick={()=>{alert("view note")}}>view</p>
+          <p className="view" onClick={()=>{<Link to='view-entry/${' $></Link>}}>view</p>
           <p className="edit">edit</p>
           <p className="delete">delete</p>
         </div>

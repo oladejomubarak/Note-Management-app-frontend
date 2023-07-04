@@ -7,7 +7,7 @@ const ViewEntry = ({ id }) => {
 
   const findById = async (id) => {
     try {
-      const response = await axios.get(`/api/endpoint/${id}`);
+      const response = await axios.get(`http://localhost:8082/api/v1/view-entry${id}`);
       setData(response.data);
     } catch (error) {
       setError(error.message);

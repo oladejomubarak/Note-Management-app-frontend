@@ -33,10 +33,13 @@ justify-content: space-between;
 }
 .view{
   color: blue;
+  cursor: pointer;
 }
 .edit{
   color: rgb(92, 189, 92);
+  cursor: pointer;
 }
 .delete{
   color: red;
+  cursor: pointer;
 }

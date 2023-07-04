@@ -42,7 +42,7 @@ const HomeContent = () => {
         <h4>at {entry.timeCreated}</h4>
         </div>
         <div className="entry-operations">
-          <p className="view">view</p>
+          <p className="view" onClick={()=>{alert("view note")}}>view</p>
           <p className="edit">edit</p>
           <p className="delete">delete</p>
         </div>

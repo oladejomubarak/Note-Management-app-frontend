@@ -67,8 +67,8 @@ const Navbar = () =>{
         </div>
       </div>
     <div className="links">
-      <Link to='/add-note'>Add note</Link>
-      <Link to='/'>Logout</Link>
+      <Link className='add-note' to='/add-note'>Add note</Link>
+      <Link className='logout' to='/'>Logout</Link>
     </div>
     </nav>
     

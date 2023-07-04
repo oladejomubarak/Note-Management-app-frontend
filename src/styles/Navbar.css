@@ -23,6 +23,12 @@
   .navbar .links {
     margin-left: auto;
   }
+  .add-note{
+    color: green;
+  }
+  .logout{
+    color: #f1356d;
+  }
   .navbar a {
     margin-left: 10px;
     text-decoration: none;

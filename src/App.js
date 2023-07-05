@@ -10,7 +10,7 @@ import {Slide,ToastContainer, toast} from 'react-toastify';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
 import AddNote from './AddNote';
-import ViewEntry from './ViewEntry';
+import ViewEntryById from './ViewEntryById';
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
         <Route path= {"/forgot-password"} element = {<ForgotPassword/>} />
         <Route path= {"/reset-password"} element = {<ResetPassword/>} />
         <Route path= {"/add-note"} element = {<AddNote/>} />
-        <Route path= {"/view-entry/{id}"} element = {<ViewEntry/>} />
+        <Route path= {"/view-entry/:id"} element = {<ViewEntryById/>} />
         </Routes>
         <ToastContainer transition={Slide}hideProgressBar={true} position={toast.POSITION.TOP_CENTER} theme='colored'/>
     </>    

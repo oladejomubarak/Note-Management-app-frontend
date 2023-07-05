@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+* {
+  margin: 0;
+  font-family: Roboto;
+}
+.navbar{
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  /* max-width: 1150px; */
+  margin: 0 auto;
+  border-bottom: 3px solid rgb(164, 109, 42);
+  border-left: 3px solid rgb(164, 109, 42);
+  border-right: 3px solid rgb(164, 109, 42);
+  background-color: antiquewhite;
+  height: 70px;
+  }
+  .navbar h1{
+    color: rgb(164, 109, 42);
+    margin-right: 50px;
+  }
+  .navbar .links {
+    margin-left: auto;
+  }
+  .add-note{
+    color: green;
+  }
+  .logout{
+    color: rgb(56, 56, 128);
+  }
+  .navbar a {
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 7px;
+  }
+  .navbar a:hover{
+    color: #f1356d;
+  }
+  .navbar button{
+    height: 35px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    
+  }
+  .navbar input{
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .image{
+      width: 100px;
+      margin-left: 500px;
+  }
+  .book{
+    justify-content: center;
+  }
+  .search{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+    flex: 1;
+    margin-left: 150px;
+    margin-right: 150px;
+  }

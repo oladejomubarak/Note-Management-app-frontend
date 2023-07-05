@@ -1,35 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/ViewEntry.css';
 
-const ViewEntry = ({ id }) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+const ViewEntry = () => {
+  const { id } = useParams();
+  const [entry, setEntry] = useState(null);
+  const [error, setError] = useState("");
+  const [isPending, setPending] = useState(true);
 
   const findById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:8082/api/v1/view-entry${id}`);
-      setData(response.data);
+      const response = await axios.get('http://localhost:8082/api/v1/view-entry/' + id);
+      setEntry(response.data);
+      setPending(false);
     } catch (error) {
-      setError(error.message);
+      setError("Error fetching entry details");
+      setPending(false);
     }
   };
-
   useEffect(() => {
-    findById(id);
+    setTimeout(()=>{
+      findById(id);
+    }, 1000);
+   
   }, [id]);
+  {error && toast.error(error)}
 
   return (
-    <div>
-      {error && <p>Error: {error}</p>}
-      {data ? (
-        <div>
-          <h2>{data.title}</h2>
-          <p>{data.description}</p>
-          {/* Render other data fields as needed */}
+    <div className='view-entry-page'>
+    <div className='entry-details'>
+      {entry ? (
+        <article className='article'>
+          <h1>{entry.title}</h1>
+          <div>{entry.body}</div>
+        <div className='dateAndTime'>
+          <h2>Date: {entry.dateCreated}</h2>
+          <h2>Time: {entry.timeCreated}</h2>
         </div>
+          </article>
       ) : (
-        <p>Loading...</p>
+         isPending && !error && <p>Loading...</p>
       )}
+    </div>
     </div>
   );
 };

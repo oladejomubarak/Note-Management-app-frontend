@@ -1,0 +1,22 @@
+.view-entry-page{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-left: 500px;
+  width: 500px;
+}
+.article{
+  background-color: rgb(244, 241, 238);
+}
+.article h1{
+  text-align: center;
+}
+.dateAndTime{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.dateAndTime h2{
+  color: brown;
+  font-size: 16px;
+}

@@ -13,9 +13,6 @@ const HomeContent = () => {
   const [isPending, setPending] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleView = ()=>{
-    return(<Link to=''></Link>);
-  }
   useEffect(()=>{
     setTimeout(()=>{
       axios.get("http://localhost:8082/api/v1/entries")
@@ -46,13 +43,13 @@ const HomeContent = () => {
     {entries ? (entries.map((entry) => (
       <div className="entry-preview" key={entry.id}>
         <h2>{entry.title}</h2>
-        {/* <p>{entry.body}</p> */}
         <div className="date-time">
           <h3>created on {entry.dateCreated}</h3>
         <h4>at {entry.timeCreated}</h4>
         </div>
         <div className="entry-operations">
-          <p className="view" onClick={()=>{<Link to='view-entry/${' $></Link>}}>view</p>
+        <Link to={`/view-entry/${entry.id}`}><p className="view">view</p></Link>
+          
           <p className="edit">edit</p>
           <p className="delete">delete</p>
         </div>

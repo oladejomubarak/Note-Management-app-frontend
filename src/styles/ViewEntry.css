@@ -1,13 +1,28 @@
 .view-entry-page{
-  margin-top: 50px;
+  padding: 50px;
+  /* margin-top: 50px;
   display: flex;
-  justify-content: center;
-  margin-left: 500px;
-  width: 500px;
+  justify-content: center; */
+  /* margin-left: 500px; */
+  /* max-width: 500px; */
+  
 }
-.article{
-  background-color: rgb(244, 241, 238);
+.entry-details {
+  background-color:rgb(244, 241, 238); /* Set the background color to brown */
+  padding: 50px; /* Add padding for spacing */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  flex-direction: column; /* Align the content in a column */
   border-radius: 15%;
+  
+}
+
+
+.article{
+  /* background-color: rgb(244, 241, 238);
+  border-radius: 15%; */
+  max-width: 100%;
 }
 .article h1{
   text-align: center;
@@ -19,6 +34,7 @@
   flex-direction: column;
   margin-top: 30px;
   border-top: 1px solid brown;
+  text-align: center;
 }
 .dateAndTime h2{
   color: brown;
@@ -27,4 +43,8 @@
 .dates{
   margin-bottom: 8px;
   margin-top: 3px;
+}
+.body{
+  width: 95%;
+  height: 100%;
 }

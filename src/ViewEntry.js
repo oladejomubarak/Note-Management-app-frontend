@@ -35,7 +35,7 @@ const ViewEntry = () => {
       {entry ? (
         <article className='article'>
           <h1>{entry.title}</h1>
-          <div>{entry.body}</div>
+          <div className='body'>{entry.body}</div>
         <div className='dateAndTime'>
           <h2 className='dates'>Date: {entry.dateCreated}</h2>
           <h2>Time: {entry.timeCreated}</h2>

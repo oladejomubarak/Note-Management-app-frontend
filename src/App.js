@@ -11,6 +11,7 @@ import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
 import AddNote from './AddNote';
 import ViewEntryById from './ViewEntryById';
+import UpdateEntry from './UpdateEntry';
 
 function App() {
 
@@ -28,7 +29,8 @@ function App() {
         <Route path= {"/forgot-password"} element = {<ForgotPassword/>} />
         <Route path= {"/reset-password"} element = {<ResetPassword/>} />
         <Route path= {"/add-note"} element = {<AddNote/>} />
-        <Route path= {"/view-entry/:id"} element = {<ViewEntryById/>} />
+        <Route path= {"/view-entry/:id"} element = {<ViewEntryById />} />
+        <Route path= {"/update-entry/:id"} element = {<UpdateEntry />} />
         </Routes>
         <ToastContainer transition={Slide}hideProgressBar={true} position={toast.POSITION.TOP_CENTER} theme='colored'/>
     </>    

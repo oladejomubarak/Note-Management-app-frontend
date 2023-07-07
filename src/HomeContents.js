@@ -4,7 +4,7 @@ import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/HomeContent.css';
 import {Link} from 'react-router-dom';
-import ViewEntry from "./ViewEntry";
+
 
 
 const HomeContent = () => {
@@ -50,7 +50,7 @@ const HomeContent = () => {
         <div className="entry-operations">
         <Link to={`/view-entry/${entry.id}`}><p className="view">view</p></Link>
           
-          <p className="edit">edit</p>
+         <Link to={`/update-entry/${entry.id}`}><p className="edit">edit</p></Link>
           <p className="delete">delete</p>
         </div>
 

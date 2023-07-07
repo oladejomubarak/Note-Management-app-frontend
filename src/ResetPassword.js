@@ -89,8 +89,8 @@ const ResetPassword = () => {
         required 
         />
         <button type='submit'>verify</button>
-        <p>Time-out? <Link to="/forgot-password">Resend token</Link></p>
       </form>
+      <p>Time-out? <Link to="/forgot-password">Resend token</Link></p>
     </div>
     </div>
 </div>

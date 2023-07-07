@@ -64,20 +64,16 @@ const Login = () => {
             />
             <label>Password:</label>
             <input
-            type="text"
+            type="password"
             onChange={handleChange}
             required
             />
             <button>Sign in</button>
-            <p><Link to="forgot-password">Forgot password ?</Link></p>
-
-            <p>Don't have an account? <Link to="/register">Register instead
-            </Link>
-            </p>
-            <p>Have an account, but not verified? <Link to="/resend-token">Request for verification token
-            </Link>
-            </p>
           </form>
+          <p><Link to="forgot-password">Forgot password ?</Link></p>
+
+          <p>Don't have an account? <Link to="/register">Register instead</Link> </p>
+          <p>Have an account, but not verified? <Link to="/resend-token">Request for verification token</Link></p>
         </div>
         </div>
     </div>

@@ -101,11 +101,11 @@ const Register = () => {
               required
             />
             <button type="submit">Sign up</button>
-            <p>
+          </form>
+          <p>
               Already have an account? <Link to="/">Log in instead</Link>
             </p>
             <p>OR <Link to="/verify-token">request for token</Link> if you have not been confirmed</p>
-          </form>
         </div>
       </div>
     </div>

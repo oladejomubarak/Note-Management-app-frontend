@@ -1,0 +1,10 @@
+body{
+  margin: 0;
+}
+.parent-div{
+  display: flex;
+}
+nav{
+background-color: antiquewhite;
+height: 50px;
+}

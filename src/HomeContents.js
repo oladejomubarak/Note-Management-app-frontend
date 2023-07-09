@@ -51,7 +51,7 @@ const HomeContent = () => {
         <Link to={`/view-entry/${entry.id}`}><p className="view">view</p></Link>
           
          <Link to={`/update-entry/${entry.id}`}><p className="edit">edit</p></Link>
-          <p className="delete">delete</p>
+          <p className="delete" onClick={()=>{alert("deleting is working");}}>delete</p>
         </div>
 
       </div>

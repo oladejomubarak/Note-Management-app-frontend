@@ -6,74 +6,68 @@ import axios from 'axios';
 
 const UpdateEntry = () => {
 
-  const { noteId } = useParams();
-  const [note, setNote] = useState({ title: '', body: ''});
-  const [updatedNote, setUpdatedNote] = useState({ title: '', body: ''});
-
-  useEffect(() => {
-    fetchNoteData();
-  }, [noteId]);
-
-  const fetchNoteData = async () => {
+  const { entryId } = useParams();
+  const [entry, setEntry] = useState(null);
+  const [updatedEntry, setUpdatedEntry] = useState({ title: '', body: ''});
+  const fetchEntryData = async () => {
     try {
-      const response = await axios.get('http://localhost:8082/api/v1/view-entry/' + noteId);
-      setNote(response.data);
-      //setUpdatedNote(response.data);
+      const response = await axios.get(`http://localhost:8082/api/v1/view-entry/${entryId}`);
+      setEntry(response.data);
+      //setUpdatedEntry(response.data);
     } catch (error) {
       console.error('Error fetching note data:', error);
     }
   };
 
-  const handleNoteChange = event => {
+  useEffect(() => {
+    fetchEntryData();
+  }, [entryId]);
+
+  
+
+  const handleEntryChange = event => {
     const { name, value } = event.target;
-    setUpdatedNote(prevNote => ({ ...prevNote, [name]: value }));
+    setUpdatedEntry(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleUpdateNote = async () => {
+  const handleUpdateEntry = async () => {
     try {
-      const response = await axios.put('http://localhost:8082/api/v1/update-entry/' + noteId, updatedNote);
+      const response = await axios.put(`http://localhost:8082/api/v1/update-entry/${entryId}`, updatedEntry);
       
       if (response.status === 200) {
         console.log('Note updated successfully');
-        setUpdatedNote(note);
-        
+        // Perform additional actions if needed
       } else {
         throw new Error('Failed to update note');
       }
     } catch (error) {
-      console.error('Error updating note:', error);
-      
+      alert("error updating note", error.name);
+      // Handle the error appropriately (e.g., show an error message)
     }
   };
 
   return (
-    <div className='parent-div'>
-      <nav className='nav'></nav>
-      {note && 
+    <div>
+    {entry && 
       <div>
-      <form onSubmit={handleUpdateNote}>
       <input
         type="text"
         name="title"
-        value={updatedNote.title}
-        contentEditable
-        onChange={handleNoteChange}
-        placeholder="Title"
+        value={entry.title}
+        onChange={handleEntryChange}
+        // placeholder="Title"
       />
       <textarea
         name="body"
-        type='text'
-        value={updatedNote.body}
-        contentEditable
-        onChange={handleNoteChange}
-        placeholder="Note Body"
+        value={entry.body}
+        onChange={handleEntryChange}
+        // placeholder="Note Body"
       />
-      <button type='sumbit'>Update Entry</button>
-      </form>
-      </div>
-      }
+      <button onClick={handleUpdateEntry}>Update Note</button>
     </div>
-  );
+}
+</div>
+      );
 }
  
 export default UpdateEntry;

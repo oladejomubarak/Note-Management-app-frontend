@@ -11,7 +11,7 @@ import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
 import AddNote from './AddNote';
 import ViewEntryById from './ViewEntryById';
-import UpdateEntry from './UpdateEntry';
+import EditEntry from './EditEntry';
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
         <Route path= {"/reset-password"} element = {<ResetPassword/>} />
         <Route path= {"/add-note"} element = {<AddNote/>} />
         <Route path= {"/view-entry/:id"} element = {<ViewEntryById />} />
-        <Route path= {"/update-entry/:id"} element = {<UpdateEntry />} />
+        <Route path= {"/update-entry/:id"} element = {<EditEntry />} />
         </Routes>
         <ToastContainer transition={Slide}hideProgressBar={true} position={toast.POSITION.TOP_CENTER} theme='colored'/>
     </>    

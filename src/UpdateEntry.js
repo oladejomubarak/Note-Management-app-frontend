@@ -11,7 +11,7 @@ const UpdateEntry = () => {
   const [updatedEntry, setUpdatedEntry] = useState({ title: '', body: ''});
   const fetchEntryData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8082/api/v1/view-entry/${entryId}`);
+      const response = await axios.get('http://localhost:8082/api/v1/view-entry/' + {entryId});
       setEntry(response.data);
       //setUpdatedEntry(response.data);
     } catch (error) {
@@ -32,7 +32,7 @@ const UpdateEntry = () => {
 
   const handleUpdateEntry = async () => {
     try {
-      const response = await axios.put(`http://localhost:8082/api/v1/update-entry/${entryId}`, updatedEntry);
+      const response = await axios.put('http://localhost:8082/api/v1/update-entry/' + {entryId}, updatedEntry);
       
       if (response.status === 200) {
         console.log('Note updated successfully');

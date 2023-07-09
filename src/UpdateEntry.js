@@ -13,6 +13,7 @@ const UpdateEntry = () => {
     try {
       const response = await axios.get('http://localhost:8082/api/v1/view-entry/' + {entryId});
       setEntry(response.data);
+      console.log(response.data);
       //setUpdatedEntry(response.data);
     } catch (error) {
       console.error('Error fetching note data:', error);

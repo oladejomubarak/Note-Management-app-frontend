@@ -57,7 +57,7 @@ const Navbar = () =>{
             <DatePicker
             selected={selectedDate}
             onChange={handleSearchThreeChange}
-            dateFormat="yyyy-MM-dd"
+            dateFormat="dd-MM-yyyy"
             placeholderText="Search note by date"
             maxDate={today}
           />

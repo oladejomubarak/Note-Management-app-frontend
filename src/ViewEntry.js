@@ -38,7 +38,7 @@ const ViewEntry = () => {
           {/* <textarea>{entry.title}</textarea> */}
           <div className='body'>{entry.body}</div>
         <div className='dateAndTime'>
-          <h2 className='dates'>Date: {entry.dateCreated}</h2>
+          <h2 className='dates'>Date: {entry.createdDate}</h2>
           <h2>Time: {entry.timeCreated}</h2>
         </div>
           </article>

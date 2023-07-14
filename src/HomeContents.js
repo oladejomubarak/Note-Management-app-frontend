@@ -44,7 +44,7 @@ const HomeContent = () => {
       <div className="entry-preview" key={entry.id}>
         <h2>{entry.title}</h2>
         <div className="date-time">
-          <h3>created on {entry.dateCreated}</h3>
+          <h3>created on {entry.createdDate}</h3>
         <h4>at {entry.timeCreated}</h4>
         </div>
         <div className="entry-operations">

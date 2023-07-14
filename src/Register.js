@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "../src/styles/Register.css";
 import LoginSideImage from "../src/assets/notePictures/images6.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Register = () => {
   const navigate = useNavigate();
@@ -34,7 +36,12 @@ const Register = () => {
     axios.post(registerApi, registerData)
       .then((res) => {
         console.log(res);
-        res.status === 200 && navigate("/verify-token");
+        if(res.data.status === 200 & !errorMessage){
+          navigate("/verify-token");
+        }
+        // res.data.status === 200 && !errorMessage && navigate("/verify-token");
+        // history.push("/verify-token");
+        
         //alert("Registration successful, check your email for verification code");
       })
       .catch((err) => {

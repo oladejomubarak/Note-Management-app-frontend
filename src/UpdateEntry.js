@@ -2,10 +2,12 @@ import "../src/styles/UpdateEntry.css";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateEntry = () => {
-  const { id } = useParams();
-  const [entry, setEntry] = useState(null);
+  // const { id } = useParams();
+  // const [entry, setEntry] = useState(null);
   // const [updatedEntry, setUpdatedEntry] = useState({ title: '', body: ''});
 
   // console.log(entryId);
@@ -53,6 +55,31 @@ const UpdateEntry = () => {
   //   }
   // };
 
+  const { id } = useParams();
+  const [entry, setEntry] = useState(null);
+  const [error, setError] = useState("");
+  const [isPending, setPending] = useState(true);
+
+  const findById = async (id) => {
+    try {
+      const response = await axios.get('http://localhost:8082/api/v1/view-entry/' + id);
+      setEntry(response.data);
+      setPending(false);
+    } catch (error) {
+      setError("Error fetching entry details");
+      setPending(false);
+    }
+  };
+  useEffect(() => {
+    setTimeout(()=>{
+      findById(id);
+    }, 1000);
+   
+  }, [id]);
+  {error && toast.error(error)}
+
+
+
   return (
     <div className="update-page">
       <h1>Update Entry</h1>
@@ -62,14 +89,14 @@ const UpdateEntry = () => {
         <input
           type="text"
           name="title"
-          //value={entry.title}
+          value={entry.title}
           // onChange={handleEntryChange}
           // placeholder="Title"
         />
         <label>Entry Body:</label>
         <textarea
           name="body"
-          //value={entry.body}
+          value={entry.body}
           // onChange={handleEntryChange}
           // placeholder="Note Body"
         />

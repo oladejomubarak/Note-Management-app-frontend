@@ -4,24 +4,21 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const UpdateEntry = () => {
-  const { entryId } = useParams();
+  const { id } = useParams();
   const [entry, setEntry] = useState(null);
   // const [updatedEntry, setUpdatedEntry] = useState({ title: '', body: ''});
 
   // console.log(entryId);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8082/api/v1/view-entry/" + entryId)
-      .then((res) => {
-        console.log(res);
-        setEntry(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios.get("http://localhost:8082/api/v1/view-entry/"+id).then((res) => {
+  //       console.log(res);
+  //       setEntry(res.data);
+  //     }).catch((err) => console.log(err));
+  // }, [id]);
   // const fetchEntryData = async () => {
   //   try {
-  //     const response = await axios.get('http://localhost:8082/api/v1/view-entry/'+{entryId});
+  //     const response = await axios.get('http://localhost:8082/api/v1/view-entry/'+id);
   //     setEntry(response.data);
   //     console.log(response.data);
   //     //setUpdatedEntry(response.data);
@@ -32,16 +29,17 @@ const UpdateEntry = () => {
 
   // useEffect(() => {
   //   fetchEntryData();
-  // }, [entryId]);
+  // }, [id]);
 
   // const handleEntryChange = event => {
+  
   //   const { name, value } = event.target;
   //   setUpdatedEntry(prev => ({ ...prev, [name]: value }));
   // };
 
   // const handleUpdateEntry = async () => {
   //   try {
-  //     const response = await axios.put('http://localhost:8082/api/v1/update-entry/'+{entryId}, updatedEntry);
+  //     const response = await axios.put('http://localhost:8082/api/v1/update-entry/'+id, updatedEntry);
 
   //     if (response.status === 200) {
   //       console.log('Note updated successfully');
@@ -64,14 +62,14 @@ const UpdateEntry = () => {
         <input
           type="text"
           name="title"
-          value={entry.title}
+          //value={entry.title}
           // onChange={handleEntryChange}
           // placeholder="Title"
         />
         <label>Entry Body:</label>
         <textarea
           name="body"
-          value={entry.body}
+          //value={entry.body}
           // onChange={handleEntryChange}
           // placeholder="Note Body"
         />

@@ -1,13 +1,14 @@
 body{
-  margin: 0;
+  margin: 0; 
+}
+.update-page{
   background-color: rgb(219, 163, 90);
-  padding: 10% 20%;
+  padding: 5% 20%;
 }
 .update-page h1{
   color: rgb(57, 44, 44);
   text-align: center;
   text-decoration: solid;
-  /* margin-top: 20px; */
   margin-bottom: 50px;
 }
 .update-page form{
@@ -27,13 +28,13 @@ body{
 .update-page input{
   max-width: 95%;
   height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: px;
 }
 .update-page label{
   text-align: left;
   color:rgb(247, 159, 44);
   margin-bottom: 2px;
-}
+} 
 .update-page button{
   align-self: center;
   margin-top: 30px;
@@ -43,5 +44,5 @@ body{
   width: 100px;
   height: 30px;
   cursor: pointer;
-}
+} 
 

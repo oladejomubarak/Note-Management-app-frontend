@@ -3,16 +3,38 @@ import { useEffect, useState } from "react";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/HomeContent.css';
-import {Link} from 'react-router-dom';
+import {Link, useParams, useNavigate} from 'react-router-dom';
 
 
 
 const HomeContent = () => {
+  const navigate = useNavigate();
+  // const {id} = useParams();
   const [entries, setEntries] = useState(null);
   const [noData, setNoData] = useState(true);
   const [isPending, setPending] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
+const handleDelete = (id) =>{
+  
+  const conf = window.confirm("Are you sure you want to delete the note entry?")
+  if(conf){
+  axios.delete("http://localhost:8082/api/v1/delete-entry/" + id)
+  .then(res =>{
+    // alert(typeof(id));
+    if(res.status === 200){
+      toast.success("Note deleted successfully");
+      setTimeout( ()=>{
+        window.location.reload()}, 2000 );
+    }
+  })
+  .catch(err => {
+    toast.error("Error deleting note!");
+    <Link to = '/home'>Back to home page</Link>
+  
+  });
+}
+} 
   useEffect(()=>{
     setTimeout(()=>{
       axios.get("http://localhost:8082/api/v1/entries")
@@ -51,7 +73,7 @@ const HomeContent = () => {
         <Link to={`/view-entry/${entry.id}`}><p className="view">view</p></Link>
           
          <Link to={`/update-entry/${entry.id}`}><p className="edit">edit</p></Link>
-          <p className="delete" onClick={()=>{alert("deleting is working");}}>delete</p>
+          <p className="delete" onClick={e => handleDelete(entry.id)}>delete</p>
         </div>
 
       </div>
@@ -64,5 +86,6 @@ const HomeContent = () => {
 
   </div>
   </>);
+  
 }
 export default HomeContent;

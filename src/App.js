@@ -13,6 +13,7 @@ import AddNote from './AddNote';
 import ViewEntryById from './ViewEntryById';
 
 import UpdateEntry from './UpdateEntry';
+import NotFound from './NotFound';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path= {"/add-note"} element = {<AddNote/>} />
         <Route path= {"/view-entry/:id"} element = {<ViewEntryById />} />
         <Route path= {"/update-entry/:id"} element = {<UpdateEntry />} />
+        <Route path= {"*"} element = {<NotFound />} />
         </Routes>
         <ToastContainer transition={Slide}hideProgressBar={true} position={toast.POSITION.TOP_CENTER} theme='colored'/>
     </>    
